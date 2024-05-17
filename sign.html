@@ -263,6 +263,9 @@
         width: 40px;
         height: 40px;
       }
+      .login-Btn{
+        background:#2bff59
+      }
     </style>
     
       <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/favicon">
@@ -293,11 +296,15 @@
             <a href="#" ><img src="./assets/img/social/facebook.png" alt="Logo Facebook" class="socal-img"></i></a>
             <a href="#" ><img src="./assets/img/social/zalo.png" alt="Logo Zalo" class="socal-img"></i></a>
           </div>
+         <div id="message"></div>
           <span>hoặc sử dụng email của bạn để đăng ký</span>
-          <input type="text" placeholder="Họ tên" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Mật khẩu" />
-          <button>Đăng ký</button>
+          <input type="text" id="reghoten" placeholder="Họ tên" />
+          <div id="reg-waring-hoten"></div>
+          <input type="email" id="regemail" placeholder="Email" />
+           <div id="reg-waring-email"></div>
+          <input type="password" id="regpassword" placeholder="Mật khẩu" />
+           <div id="reg-waring-password"></div>
+          <input type="button" id="regbtn" value="Đăng ký" onclick='xulyDangKy()'>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -311,10 +318,13 @@
             
           </div>
           <span>Hoặc</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Mật khẩu" />
+          <div id="login-message"></div>
+          <input type="email" id="login-email"  placeholder="Email"  />
+          <div id="email-waring"></div>
+          <input type="password" id="login-password" placeholder="Mật khẩu" />
+          <div id="password-waring"></div>
           <a href="#">Quên mật khẩu?</a>
-          <button>Đăng nhập</button>
+          <input type="button" id="login-Btn" value="Đăng nhập" onclick='xuLyDangNhap()' />
         </form>
       </div>
       <div class="overlay-container">
@@ -335,7 +345,7 @@
       </div>
     </div>
     <script>
-      const signUpButton = document.getElementById("signUp");
+ const signUpButton = document.getElementById("signUp");
       const signInButton = document.getElementById("signIn");
       const container = document.getElementById("container");
 
@@ -346,6 +356,89 @@
       signInButton.addEventListener("click", () => {
         container.classList.remove("right-panel-active");
       });
-    </script>
+      function xuLyMail(mail) {
+  // Biểu thức chính quy để kiểm tra định dạng email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Kiểm tra chuỗi có khớp với biểu thức chính quy hay không
+  return emailRegex.test(mail);
+}
+
+function xuLyDangNhap() {
+  const mail = document.getElementById("login-email").value;
+  const pass = document.getElementById("login-password").value;
+
+  if (!xuLyMail(mail)) {
+    const suaText = document.getElementById('email-waring');
+    suaText.innerText = "Vui lòng nhập email hợp lệ";
+  } else {
+    document.getElementById('email-waring').innerText = "";
+  }
+
+  const passwaring = document.getElementById("password-waring");
+
+  if (xuLyMail(mail) && pass !== "") {
+    // Xóa mật khẩu và ẩn thông báo lỗi khi đăng nhập thành công
+    document.getElementById("login-password").value = "";
+    passwaring.innerText = "";
+    document.getElementById('email-waring').innerText=" ";
+    passwaring.style.display = 'none';
+    alert("Đăng nhập thành công!");
+  } else {
+    if (pass === "") {
+      passwaring.innerText = "Mật khẩu không được để trống";
+      passwaring.style.display = 'block';
+    }
+  }
+}
+
+function xulyDangKy() {
+  const hoTen = document.getElementById("reghoten").value.trim();
+  const email = document.getElementById("regemail").value.trim();
+  const matKhau = document.getElementById("regpassword").value.trim();
+
+  const hoTenWarning = document.getElementById("reg-waring-hoten");
+  const emailWarning = document.getElementById("reg-waring-email");
+  const matKhauWarning = document.getElementById("reg-waring-password");
+
+  // Kiểm tra họ tên
+  if (hoTen === "") {
+    hoTenWarning.innerText = "Vui lòng nhập họ tên";
+    hoTenWarning.style.display = "block";
+  } else {
+    hoTenWarning.innerText = "";
+    hoTenWarning.style.display = "none";
+  }
+
+  // Kiểm tra email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailWarning.innerText = "Vui lòng nhập email hợp lệ";
+    emailWarning.style.display = "block";
+  } else {
+    emailWarning.innerText = "";
+    emailWarning.style.display = "none";
+  }
+
+  // Kiểm tra mật khẩu
+  if (matKhau === "") {
+    matKhauWarning.innerText = "Vui lòng nhập mật khẩu";
+    matKhauWarning.style.display = "block";
+  } else {
+    matKhauWarning.innerText = "";
+    matKhauWarning.style.display = "none";
+  }
+
+  // Xử lý khi tất cả dữ liệu hợp lệ
+  if (hoTen !== "" && emailRegex.test(email) && matKhau !== "") {
+    // Thực hiện đăng ký tại đây
+    alert("Đăng ký thành công!");
+    // Xóa dữ liệu trong các trường nhập liệu sau khi đăng ký thành công
+    document.getElementById("reghoten").value = "";
+    document.getElementById("regemail").value = "";
+    document.getElementById("regpassword").value = "";
+  }
+}
+    </script>  
   </body>
 </html>
