@@ -733,11 +733,11 @@ a {
  }
  #home-img-bee{
   width: 100%;
-  height: 44rem;
+  height: 18rem;
   object-fit: cover ;
   padding: 0;
   margin: 0;
-  border-radius: 25% 10%;
+  border-radius: 8px;
  }
 .info{
   width: 100%;
@@ -773,6 +773,70 @@ a {
 .footer .row-top {
     gap: 4rem;
 }
+.row .clients-row-main{
+  font-size: 1.5rem;
+}
+.clients .content .logos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0rem 0;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.stats-logo-company .logo-pictre {
+    height: 3rem;
+    padding: 0rem;
+    margin-bottom: 2rem;
+}
+.footer .content .row {
+    display: flex;
+    flex-direction: column;
+}
+.footer .heading {
+
+  margin-bottom: 0rem; 
+
+}
+.subscription .body .info {
+    padding-left: 2rem;
+    width: 57.1rem;
+    max-width: 100%;
+}
+.stats .content .row .img-block {
+    position: relative;
+    display: none;
+}
+.stats .row .info {
+    padding-left: 0rem; 
+}
+.stats .content .row-2 {
+    display: flex;
+    margin-top: 16rem;
+    justify-content: space-between;
+    padding: 2rem;
+    border: 1px solid #205cca;
+    border-radius: 0.8rem;
+    flex-direction: column;
+}
+.stats .content .row-2 .qty-item:first-child {
+     margin-left: 0rem; 
+}
+.stats .content .row-2 {
+   padding: 0;
+}
+.stats .content .row-2 .qty {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 6.4rem;
+}
+.stats .content .row-2 .qty-item {
+        padding: 2rem 1rem;
+    }
 
 }
 /* tablet */
