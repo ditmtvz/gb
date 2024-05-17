@@ -714,10 +714,124 @@ a {
   font-weight: 400;
   word-wrap: break-word;
 }
-
-@media only screen and (max-width: 74rem){
+/* mobile */
+@media only screen and (max-width: 740px){
+  .navbar ul a{
+  display: none;
+ }
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+ .hero img{
+  position: static;
+  border-radius: none;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+ }
+ #home-img-bee{
+  width: 100%;
+  height: 44rem;
+  object-fit: cover ;
+  padding: 0;
+  margin: 0;
+  border-radius: 25% 10%;
+ }
+.info{
+  width: 100%;
+}
+.hero .info .hero-cta {
+    min-width: 10rem;
+    margin-bottom: 2rem;
+}
+.featured .list{
+  flex-direction: column;
+}
+.featured .item{
+  display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+    justify-content: left
+}
+.featured .list .item .thumb {
+    width: 100%;
+    height: 22.7rem;
+    object-fit: cover;
+}
+.stats{
+  margin-top:7rem;
+}
+.stats .content .row-2 .qty-item{
+  padding: 0 1rem;
+}
+.subscription .body .image{
+  display: none;
+}
+.footer .row-top {
+    gap: 4rem;
+}
 
 }
-@media only screen and (min-width: 74.001rem) and (max-width: 102.4rem){
-  
+/* tablet */
+@media only screen and (min-width: 740.001px) and (max-width: 1024px){
+ .navbar ul a{
+  display: none;
+ }
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+ .hero img{
+  position: static;
+  border-radius: none;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+ }
+ #home-img-bee{
+  width: 100%;
+  height: 44rem;
+  object-fit: cover ;
+  padding: 0;
+  margin: 0;
+  border-radius: 25% 10%;
+ }
+.info{
+  width: 100%;
+}
+.hero .info .hero-cta {
+    min-width: 10rem;
+    margin-bottom: 2rem;
+}
+.featured .list{
+  flex-direction: column;
+}
+.featured .item{
+  display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex: 1;
+    justify-content: left
+}
+.featured .list .item .thumb {
+    width: 100%;
+    height: 22.7rem;
+    object-fit: cover;
+}
+.stats{
+  margin-top:7rem;
+}
+.stats .content .row-2 .qty-item{
+  padding: 0 1rem;
+}
+.subscription .body .image{
+  display: none;
+}
+.footer .row-top {
+    gap: 4rem;
+}
 }
