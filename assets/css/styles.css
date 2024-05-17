@@ -714,3 +714,10 @@ a {
   font-weight: 400;
   word-wrap: break-word;
 }
+
+@media only screen and (max-width: 74rem){
+
+}
+@media only screen and (min-width: 74.001rem) and (max-width: 102.4rem){
+  
+}
