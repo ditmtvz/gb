@@ -882,6 +882,9 @@ a {
         font-weight: 600;
         line-height: 6.4rem;
     }
+    .subscription .body .sub-title {
+    padding-top: 4.9rem;
+}
 }
 /* tablet */
 @media only screen and (min-width: 740.001px) and (max-width: 1024px){
