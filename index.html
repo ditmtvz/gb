@@ -305,21 +305,25 @@
                </div>
             </div>
          </div>
-         <!--Subscription  -->
-         <div id="contact" class="contact-fixed">
-         <div class="subscription">
-            <div class="content">
-               <div class="body">
-                  <div class="info">
-                     <h2 class="sub-title line-clamp">Đăng Ký Nhận Bản Tin Của Chúng Tôi!</h2>
-                     <p class="desc line-clamp">Đăng ký nhận bản tin của chúng tôi để cập nhật thông tin mới nhất.</p>
-                     <a href="" class="btn">Đăng Ký</a>
-                  </div>
-                  <img src="./assets/img/homeillustration.svg" alt="" class="image">
-               </div>
+        <div id="contact" class="contact-fixed">
+    <div class="subscription">
+        <div class="content">
+            <div class="body">
+                <div class="info">
+                    <h2 class="sub-title line-clamp">Đăng Ký Nhận Bản Tin Của Chúng Tôi!</h2>
+                    <p class="desc line-clamp">Đăng ký nhận bản tin của chúng tôi để cập nhật thông tin mới nhất.</p>
+                    <form id="subscriptionForm">
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+                        <br>
+                        <button type="submit" class="btn">Đăng Ký</button>
+                    </form>
+                </div>
+                <img src="./assets/img/homeillustration.svg" alt="" class="image">
             </div>
-         </div>
-         </div>
+        </div>
+    </div>
+</div>
+
          
       </main>
          <!-- Footer -->
@@ -407,6 +411,28 @@
             </div>
          </footer>
       </main>
-       
+       <script>
+         document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+         event.preventDefault(); 
+         
+         var emailInput = document.getElementById('email');
+         var emailValue = emailInput.value;
+         
+         if (validateEmail(emailValue)) {
+         
+            alert('Đăng ký thành công!');
+         } else {
+         
+            alert('Vui lòng nhập địa chỉ email hợp lệ.');
+         }
+      });
+
+// Hàm kiểm tra định dạng email
+         function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+         }
+
+       </script>
    </body>
 </html>

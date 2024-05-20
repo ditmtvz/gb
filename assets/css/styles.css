@@ -714,6 +714,10 @@ a {
   font-weight: 400;
   word-wrap: break-word;
 }
+#subscriptionForm #email{
+  padding: 0.5rem 3rem;
+  margin: 2rem 0;
+}
 
 /* mobile */
 @media only screen and (max-width: 740px){
