@@ -718,7 +718,52 @@ a {
   padding: 0.5rem 3rem;
   margin: 2rem 0;
 }
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+input{
+    width: 100%;
+    margin: 20px 0;
+}
+#orderForm{
+  margin-top: 5rem;
+    background: #e8e466;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+#orderForm>label:first-child{
+  display: block;
+  margin: 2rem 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.btn:hover{
+  cursor: pointer;
+}
 /* mobile */
 @media only screen and (max-width: 740px){
   .navbar ul a{

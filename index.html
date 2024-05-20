@@ -228,6 +228,47 @@
                   </div>
                </div>
             </div>
+
+            <!-- add product -->
+                <form id="orderForm">
+        <label for="itemName">Bạn muốn đặt hàng trước?</label>      <br>
+        <p>Nhập tên sản phẩm </p>
+        <input type="text" id="itemName" placeholder="Tên sản phẩm">
+
+        <br>
+        <label for="notes">Nhập ghi chú</label><br>
+        <input type="text" id="notes" placeholder="Nhập ghi chú">
+
+        <br>
+
+        <label for="count">Số lượng</label> <br>
+        <input type="number" id="count" placeholder="Nhập số lượng" min="0">
+
+        <br>
+        <button type="button" id="addItem" onclick="tinhtongtien()">Thêm</button>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Sản phẩm</th>
+              <th>Ghi chú</th>
+              <th>Số lượng</th>
+            </tr>
+          </thead>
+          <tbody id="orderList"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Tổng số SP</td>
+              <td id="totalCost">0</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p id="message"></p>
+      </form>
+      <div class="center">
+               <div class="btn">Đặt hàng</div>
+      </div>
+
          </div>
          <!-- Stats -->
          <div id="resources" class="stats">
@@ -432,6 +473,44 @@
             var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
          }
+          function tinhtongtien() {
+
+    const tensp = document.getElementById("itemName").value;
+    const ghichu = document.getElementById("notes").value;
+    const dongia = parseFloat(document.getElementById("count").value);
+
+
+    if (isNaN(dongia) || dongia < 0) {
+      document.getElementById("message").innerText = "Vui lòng nhập số hợp lệ.";
+      return;
+    }
+
+
+    const tongtien = parseFloat(document.getElementById("totalCost").innerText);
+    const thanhtien = dongia;
+
+
+    const table = document.getElementById("orderList");
+    const newRow = table.insertRow(-1);
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+    cell1.innerText = table.rows.length ; 
+    cell2.innerText = tensp; 
+    cell3.innerText = ghichu; 
+    cell4.innerText = thanhtien.toFixed(0); 
+
+  
+    document.getElementById("totalCost").innerText = (tongtien + thanhtien).toFixed(0);
+
+
+    document.getElementById("itemName").value = "";
+    document.getElementById("notes").value = "";
+    document.getElementById("count").value = "";
+
+    document.getElementById("message").innerText = "";
+  }
 
        </script>
    </body>
