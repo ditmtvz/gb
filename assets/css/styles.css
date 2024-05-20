@@ -748,6 +748,21 @@ input{
     padding: 1rem 2rem;
     border-radius: 8px;
 }
+input[type=text] { 
+   border: 2px solid purple;  
+   border-radius: 4px; 
+   padding: 0.5rem 0;
+}
+input[type=number] { 
+   border: 2px solid purple; 
+   border-radius: 4px;
+   padding: 0.5rem 0;
+}
+#orderForm input[type=button] { 
+   border: 2px solid purple; 
+   border-radius: 4px;
+   padding: 1rem 2rem;
+}
 #orderForm>label:first-child{
   display: block;
   margin: 2rem 2rem;
@@ -764,6 +779,9 @@ input{
 .btn:hover{
   cursor: pointer;
   background: #0f1b4cd1;
+}
+#message{
+  padding: 1rem 0;
 }
 /* mobile */
 @media only screen and (max-width: 740px){
